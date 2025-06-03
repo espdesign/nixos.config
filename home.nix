@@ -9,8 +9,9 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     discord
-    #ghostty
-    firefox
+    #firefox # not needed, check programs.firefox.enable = true
+    #gnome specific
+    dconf
 
     zip
     xz
@@ -26,6 +27,10 @@
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
   ];
+  dconf.settings = {
+    "org/gtk/settings/file-chooser/clock-format".custom-value = "12h";
+    "org/gnome/desktop/interface".show-battery-percentage = true;
+  };
   programs = {
     # basic configuration of git
     git = {
@@ -47,6 +52,27 @@
             name = "gruvbox";
             style = "dark";
           };
+          options = {
+            shiftwidth = 4;
+            tabstop = 4;
+            expandtab = true;
+          };
+          autocmds = [
+            {
+              event = ["BufEnter"];
+              pattern = ["*.nix"];
+              desc = "command to run entering nix buffer";
+              command = "setlocal tabstop=2 shiftwidth=2 expandtab";
+              once = true;
+            }
+            {
+              event = ["BufEnter"];
+              pattern = ["*.py"];
+              desc = "command to run entering py buffer";
+              command = "setlocal tabstop=4 shiftwidth=4 expandtab";
+              once = true;
+            }
+          ];
           lsp.enable = true;
           lsp.formatOnSave = true;
           statusline.lualine.enable = true;
