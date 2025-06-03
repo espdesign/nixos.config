@@ -91,101 +91,22 @@
     # packages = with pkgs; [
     #  thunderbird
     # ];
-    shell = pkgs.zsh;
-  };
-  # install neovim
-  #programs.neovim = {
-  #  enable = true;
-  #  defaultEditor = true;
-  #};
-
-  programs.nvf = {
-    enable = true;
-    # your settings need to go into the settings attribute set
-    # most settings are documented in the appendix
-    # https://notashelf.github.io/nvf/options.html
-    settings = {
-      vim.vimAlias = true;
-      vim = {
-        theme = {
-          enable = true;
-          name = "gruvbox";
-          style = "dark";
-        };
-        lsp.enable = true;
-        lsp.formatOnSave = true;
-        statusline.lualine.enable = true;
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
-        clipboard.enable = true;
-        navigation.harpoon.enable = true;
-
-        languages = {
-          enableTreesitter = true;
-          nix = {
-            enable = true;
-            format.enable = true;
-          };
-          python.enable = true;
-        };
-      };
-    };
   };
 
-  # install zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    #    autosuggestions.enable = true;
-    #    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-      edit = "sudo -e";
-      update = "sudo nixos-rebuild switch";
-    };
-
-    histSize = 10000;
-    histFile = "$HOME/.zsh_history";
-    setOptions = [
-      "HIST_IGNORE_ALL_DUPS"
-    ];
-
-    ohMyZsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "z"
-      ];
-      theme = "robbyrussell";
-    };
-  };
-  # Install firefox.
-  programs.firefox.enable = true;
+  #set default shell to be zsh
+  users.users.evan.shell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
     git
-    stow #gnu stow, for .dotfiles
-
     python313
     uv
-
-    #neovim deps
-    #luajitPackages.luarocks_bootstrap
-    #ripgrep
-    #fd
-    #lua
     wl-clipboard-x11
-    #luajitPackages.lua-lsp
-    #(python3.withPackages (python-pkgs: with python-pkgs; [
-    #	ruff
-    #]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -214,6 +135,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
   #Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

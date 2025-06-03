@@ -23,14 +23,17 @@
         modules = [
           ./configuration.nix
           nixos-hardware.nixosModules.framework-12th-gen-intel
-          nvf.nixosModules.default
+          #nvf.nixosModules.default
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.evan = {pkgs, ...}: {
-              imports = [./home.nix];
+              imports = [
+                ./home.nix
+                nvf.homeManagerModules.default
+              ];
             };
           }
         ];
