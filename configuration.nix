@@ -63,7 +63,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -80,25 +84,37 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  #--- Enable and configure syncthing.
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "evan";
+    # settings = {
+    #   devices."homelab".id = "2B5LXHB-NE2FZ3F-M34RP6Y-G3NS2PD-JGN6CUH-KV3FWVI-ZAXEEJ5-QIZ77A3";
+    #   folders."Documents" = {
+    #     path = "/home/evan/Documents/";
+    #     devices = ["homelab"];
+    #   };
+    # };
+  };
+  # Don't create default ~/Sync folder
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
+  # ---
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # --- Define a user account.---
+  # Don't forget to set a password with ‘passwd’.
   users.users.evan = {
     isNormalUser = true;
     description = "Evan Pendergraft";
     extraGroups = ["networkmanager" "wheel"];
-    # packages = with pkgs; [
-    #  thunderbird
-    # ];
+    shell = pkgs.zsh;
   };
+  # ---
 
   #set default shell to be zsh
-  users.users.evan.shell = pkgs.zsh;
   programs.zsh.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  #set default editor
+  environment.variables.EDITOR = "nvim";
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -108,7 +124,16 @@
     uv
     wl-clipboard-x11
   ];
-
+  # Packages to remove from gnome base install
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+  ];
+  # Install Fonts
+  fonts.packages = with pkgs; [
+    # Nerd Fonts
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -116,8 +141,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -128,6 +151,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # --- Static Config ----
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -138,14 +162,7 @@
 
   #Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Packages to remove from gnome base install
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-  ];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.fira-code
-  ];
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  # ---
 }

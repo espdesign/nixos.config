@@ -12,6 +12,7 @@
     #firefox # not needed, check programs.firefox.enable = true
     #gnome specific
     dconf
+    dconf-editor
 
     zip
     xz
@@ -27,9 +28,22 @@
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
   ];
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+  # home.file.".local/share/backgrounds/molly-wallpaper.jpg".source = ./molly.jpg;
   dconf.settings = {
+    # To help find the location and setting of the database,
+    # use the following command to see what settings you
+    # have activated already
+
+    # dconf dump / > dconf.settings
+
     "org/gtk/settings/file-chooser/clock-format".custom-value = "12h";
     "org/gnome/desktop/interface".show-battery-percentage = true;
+    # "org/gnome/desktop/background" = {
+    # picture-uri = "file://${config.home.homeDirectory}/.local/share/backgrounds/molly-wallpaper.jpg";
+    # };
   };
   programs = {
     # basic configuration of git
@@ -96,6 +110,7 @@
     # install zsh
     zsh = {
       enable = true;
+      sessionVariables = {EDITOR = "nvim";};
       enableCompletion = true;
       #    autosuggestions.enable = true;
       #    syntaxHighlighting.enable = true;
