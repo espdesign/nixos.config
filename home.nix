@@ -28,6 +28,11 @@
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
   ];
+  services.syncthing = {
+    enable = true;
+    overrideDevices = false;
+    overrideFolders = false;
+  };
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -117,7 +122,7 @@
       shellAliases = {
         ll = "ls -l";
         edit = "sudo -e";
-        update = "sudo nixos-rebuild switch";
+        update = "sudo nixos-rebuild switch --flake /etc/nixos/#framework";
       };
     };
     starship = {
@@ -133,8 +138,10 @@
       enable = true;
       settings = {
         theme = "dark:GruvboxDark,light:GruvboxLight";
-        window-decoration = "none";
+        window-decoration = "auto";
         font-size = 14;
+        background-opacity = 0.95;
+        background-blur = true;
       };
     };
   };

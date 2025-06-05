@@ -18,7 +18,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "framework-nix"; # Define your hostname.
+  networking.hostName = "framework"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.hosts = {
     "192.168.1.201" = ["home.lab"];
@@ -85,20 +85,20 @@
   };
 
   #--- Enable and configure syncthing.
-  services.syncthing = {
-    enable = true;
-    openDefaultPorts = true;
-    user = "evan";
-    # settings = {
-    #   devices."homelab".id = "2B5LXHB-NE2FZ3F-M34RP6Y-G3NS2PD-JGN6CUH-KV3FWVI-ZAXEEJ5-QIZ77A3";
-    #   folders."Documents" = {
-    #     path = "/home/evan/Documents/";
-    #     devices = ["homelab"];
-    #   };
-    # };
-  };
+  # services.syncthing = {
+  #   enable = true;
+  #   openDefaultPorts = true;
+  #   user = "evan";
+  #   # settings = {
+  #   #   devices."homelab".id = "2B5LXHB-NE2FZ3F-M34RP6Y-G3NS2PD-JGN6CUH-KV3FWVI-ZAXEEJ5-QIZ77A3";
+  #   #   folders."Documents" = {
+  #   #     path = "/home/evan/Documents/";
+  #   #     devices = ["homelab"];
+  #   #   };
+  #   # };
+  # };
   # Don't create default ~/Sync folder
-  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
+  # systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
   # ---
 
   # --- Define a user account.---
