@@ -48,6 +48,10 @@
       # have activated already
 
       # dconf dump / > dconf.settings
+      "org/gnome/shell" = {
+        favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
+        last-selected-power-profile = "power-saver";
+      };
 
       "org/gtk/settings/file-chooser/clock-format".custom-value = "12h";
       "org/gnome/desktop/interface".show-battery-percentage = true;
