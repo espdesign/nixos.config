@@ -37,6 +37,7 @@
             home-manager.users.evan = {
               imports = [
                 ./home/home.nix
+                ./wallpaper.jpg
                 nvf.homeManagerModules.default
               ];
             };
