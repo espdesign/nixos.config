@@ -39,7 +39,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  home.file.".local/share/backgrounds/molly-wallpaper.jpg".source = ./background.jpg;
+  home.file.".local/share/backgrounds/molly-wallpaper.jpg".source = ./wallpaper.jpg;
   dconf = {
     enable = true;
     settings = {
