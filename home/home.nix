@@ -14,6 +14,9 @@
     dconf
     dconf-editor
 
+    slack
+    signal-desktop
+
     zip
     xz
     unzip
