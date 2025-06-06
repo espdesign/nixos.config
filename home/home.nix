@@ -154,13 +154,13 @@
         update = "sudo nixos-rebuild switch --flake .#framework";
       };
     };
-    starship = {
-      enable = true;
-      enableZshIntegration = true;
-      settings = {
-      };
-    };
-    # Install firefox.
+    # starship = {
+    #   enable = true;
+    #   enableZshIntegration = true;
+    #   settings = {
+    #   };
+    # };
+    # # Install firefox.
     firefox.enable = true;
 
     ghostty = {
@@ -174,7 +174,7 @@
       };
     };
   };
-  xdg.mimeApps.enable = true;
+  # xdg.mimeApps.enable = true;
   # xdg.mimeApps.defaultApplications = {
   #   "x-scheme-handler/http" = ["firefox.desktop"];
   #   "x-scheme-handler/https" = ["firefox.desktop"];

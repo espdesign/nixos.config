@@ -39,6 +39,7 @@
             home-manager.users.evan = {
               imports = [
                 ./home/home.nix
+                ./modules/starship.nix
                 nvf.homeManagerModules.default
               ];
             };
