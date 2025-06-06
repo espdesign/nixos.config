@@ -4,7 +4,7 @@
   ...
 }: {
   # install zsh
-  zsh = {
+  programs.zsh = {
     enable = true;
     sessionVariables = {EDITOR = "nvim";};
     enableCompletion = true;
