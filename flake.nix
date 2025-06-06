@@ -37,7 +37,7 @@
             home-manager.users.evan = {
               imports = [
                 ./home/home.nix
-
+                ./modules/reduce-disk-use.nix
                 nvf.homeManagerModules.default
               ];
             };
