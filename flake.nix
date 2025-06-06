@@ -28,18 +28,20 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./nixos/configuration.nix
-          #reduce disk usage modules`
-          ./modules/reduce-disk-use.nix
+
+          # reduce disk space module
+          ./nixos/modules/reduce-disk-use.nix
           nixos-hardware.nixosModules.framework-12th-gen-intel
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # home-manager.users.evan = {pkgs, ...}: {
             home-manager.users.evan = {
               imports = [
                 ./home/home.nix
-                ./modules/starship.nix
+                # home-manager modules
+                ./home/modules/starship.nix
+
                 nvf.homeManagerModules.default
               ];
             };
