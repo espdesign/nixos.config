@@ -16,7 +16,6 @@
 
     obsidian
     ungoogled-chromium
-
     slack
     signal-desktop
 
@@ -79,6 +78,8 @@
     };
   };
   programs = {
+    # Enable github.com cli.
+    gh.enable = true;
     # basic configuration of git
     git = {
       enable = true;
