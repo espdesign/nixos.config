@@ -14,17 +14,18 @@
   home.homeDirectory = "/home/evan";
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    discord
-    #firefox # not needed, check programs.firefox.enable = true
     #gnome specific
     dconf
     dconf-editor
 
+    #used non-free apps
     obsidian
+    discord
     ungoogled-chromium
     slack
     signal-desktop
 
+    # utilities
     zip
     xz
     unzip
@@ -146,27 +147,7 @@
         };
       };
     };
-
-    # # install zsh
-    # zsh = {
-    #   enable = true;
-    #   sessionVariables = {EDITOR = "nvim";};
-    #   enableCompletion = true;
-    #   #    autosuggestions.enable = true;
-    #   #    syntaxHighlighting.enable = true;
-    #   shellAliases = {
-    #     ll = "ls -l";
-    #     edit = "sudo -e";
-    #     update = "sudo nixos-rebuild switch --flake .#framework";
-    #   };
-    # };
-    # # starship = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    #   settings = {
-    #   };
-    # };
-    # # Install firefox.
+    # Install firefox.
     firefox.enable = true;
 
     ghostty = {
@@ -180,17 +161,6 @@
       };
     };
   };
-  # xdg.mimeApps.enable = true;
-  # xdg.mimeApps.defaultApplications = {
-  #   "x-scheme-handler/http" = ["firefox.desktop"];
-  #   "x-scheme-handler/https" = ["firefox.desktop"];
-  #   "text/html" = ["firefox.desktop"];
-  #   "application/xhtml+xml" = ["firefox.desktop"];
-  #   "application/xml" = ["firefox.desktop"];
-  #   "application/vnd.mozilla.xul+xml" = ["firefox.desktop"];
-  #   "image/webp" = ["firefox.desktop"];
-  #   # You might have other entries like the Signal ones; keep them too.
-  # };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
