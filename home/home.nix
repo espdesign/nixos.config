@@ -151,7 +151,7 @@
       shellAliases = {
         ll = "ls -l";
         edit = "sudo -e";
-        update = "sudo nixos-rebuild switch .#framework";
+        update = "sudo nixos-rebuild switch --flake .#framework";
       };
     };
     starship = {
