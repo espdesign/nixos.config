@@ -174,6 +174,17 @@
       };
     };
   };
+  xdg.mimeApps.enable = true;
+  # xdg.mimeApps.defaultApplications = {
+  #   "x-scheme-handler/http" = ["firefox.desktop"];
+  #   "x-scheme-handler/https" = ["firefox.desktop"];
+  #   "text/html" = ["firefox.desktop"];
+  #   "application/xhtml+xml" = ["firefox.desktop"];
+  #   "application/xml" = ["firefox.desktop"];
+  #   "application/vnd.mozilla.xul+xml" = ["firefox.desktop"];
+  #   "image/webp" = ["firefox.desktop"];
+  #   # You might have other entries like the Signal ones; keep them too.
+  # };
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
