@@ -14,6 +14,9 @@
     dconf
     dconf-editor
 
+    obsidian
+    ungoogled-chromium
+
     slack
     signal-desktop
 
@@ -35,6 +38,18 @@
     enable = true;
     overrideDevices = false;
     overrideFolders = false;
+    settings = {
+      devices = {
+        "homelab" = {id = "2B5LXHB-NE2FZ3F-M34RP6Y-G3NS2PD-JGN6CUH-KV3FWVI-ZAXEEJ5-QIZ77A3";};
+      };
+      folders = {
+        "syncdocs" = {
+          id = "gfrgi-utm7w";
+          path = "/home/evan/Documents/syncdocs";
+          devices = ["homelab"];
+        };
+      };
+    };
   };
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -49,6 +64,9 @@
 
       # dconf dump / > dconf.settings
       "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+        ];
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
         last-selected-power-profile = "power-saver";
       };
@@ -132,7 +150,7 @@
       shellAliases = {
         ll = "ls -l";
         edit = "sudo -e";
-        update = "sudo nixos-rebuild switch --flake /etc/nixos/#framework";
+        update = "sudo nixos-rebuild switch .#framework";
       };
     };
     starship = {
