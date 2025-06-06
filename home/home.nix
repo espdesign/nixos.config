@@ -3,6 +3,12 @@
   pkgs,
   ...
 }: {
+  #import modules
+  imports = [
+    ./modules/starship.nix
+    ./modules/zsh.nix
+  ];
+
   # TODO please change the username & home directory to your own
   home.username = "evan";
   home.homeDirectory = "/home/evan";
