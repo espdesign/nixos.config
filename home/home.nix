@@ -7,6 +7,7 @@
   imports = [
     ./modules/starship.nix
     ./modules/zsh.nix
+    ./modules/distrobox.nix
   ];
 
   # TODO please change the username & home directory to your own
