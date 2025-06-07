@@ -8,6 +8,7 @@
     ./modules/starship.nix
     ./modules/zsh.nix
     #./modules/distrobox.nix
+    ./modules/virt-manager.nix
   ];
 
   # TODO please change the username & home directory to your own
@@ -27,7 +28,7 @@
     signal-desktop
 
     #nix helpers
-    devenv
+    # devenv
     # utilities
     zip
     xz

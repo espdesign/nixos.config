@@ -30,6 +30,9 @@
           ./nixos/configuration.nix
           # reduce disk space module
           ./nixos/modules/reduce-disk-use.nix
+          #enable virt-manager, also make sure to enable home.nix module for virt-manager
+          ./nixos/modules/virt-manager.nix
+
           nixos-hardware.nixosModules.framework-12th-gen-intel
           home-manager.nixosModules.home-manager
           {
