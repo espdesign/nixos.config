@@ -114,7 +114,10 @@
   #set default shell to be zsh
   programs.zsh.enable = true;
   #set default editor
-  environment.variables.EDITOR = "nvim";
+  environment.variables = {
+    EDITOR = "nvim";
+    UV_PYTHON_DOWNLOADS = "never";
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

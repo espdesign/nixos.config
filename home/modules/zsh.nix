@@ -6,7 +6,6 @@
   # install zsh
   programs.zsh = {
     enable = true;
-    sessionVariables = {EDITOR = "nvim";};
     enableCompletion = true;
     #    autosuggestions.enable = true;
     #    syntaxHighlighting.enable = true;
