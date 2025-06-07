@@ -7,7 +7,7 @@
   imports = [
     ./modules/starship.nix
     ./modules/zsh.nix
-    ./modules/distrobox.nix
+    #./modules/distrobox.nix
   ];
 
   # TODO please change the username & home directory to your own
@@ -41,7 +41,7 @@
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
   ];
-  services.podman.enable = true;
+  # services.podman.enable = true;
   services.syncthing = {
     enable = true;
     overrideDevices = false;
