@@ -148,6 +148,7 @@
               format.enable = true;
             };
             python.enable = true;
+            python.lsp.server = "pyright";
           };
         };
       };
@@ -160,7 +161,7 @@
       settings = {
         theme = "dark:GruvboxDark,light:GruvboxLight";
         window-decoration = "auto";
-        font-size = 14;
+        font-size = 16;
         background-opacity = 0.95;
         background-blur = true;
       };
