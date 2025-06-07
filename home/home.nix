@@ -41,6 +41,7 @@
     glow # markdown previewer in terminal
     btop # replacement of htop/nmon
   ];
+  services.podman.enable = true;
   services.syncthing = {
     enable = true;
     overrideDevices = false;
