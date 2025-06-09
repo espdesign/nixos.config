@@ -27,7 +27,7 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          ./nixos/configuration.nix
+          ./nixos/framework/configuration.nix
           # reduce disk space module
           ./nixos/modules/reduce-disk-use.nix
           #enable virt-manager, also make sure to enable home.nix module for virt-manager
