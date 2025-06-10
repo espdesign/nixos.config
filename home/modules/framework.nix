@@ -4,6 +4,8 @@
   ...
 }: {
   # framework specific home settings
+
+  programs.ghostty.font-size = 16;
   dconf = {
     enable = true;
     settings = {

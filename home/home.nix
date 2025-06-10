@@ -160,13 +160,11 @@
     };
     # Install firefox.
     firefox.enable = true;
-
     ghostty = {
       enable = true;
       settings = {
         theme = "dark:GruvboxDark,light:GruvboxLight";
         window-decoration = "auto";
-        font-size = 13;
         background-opacity = 0.95;
         background-blur = true;
       };
