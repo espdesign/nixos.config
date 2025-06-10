@@ -63,7 +63,7 @@
             home-manager.users.evan = {
               imports = [
                 ./home/home.nix
-                ./home/home/modules/desktop.nix
+                ./home/modules/desktop.nix
                 nvf.homeManagerModules.default
               ];
             };
