@@ -19,6 +19,8 @@
     #gnome specific
     dconf
     dconf-editor
+    gnome-shell-extensions
+    gnomeExtensions.appindicator
 
     #used non-free apps
     obsidian
@@ -26,10 +28,14 @@
     ungoogled-chromium
     slack
     signal-desktop
-
+    #office apps
+    libreoffice
     #nix helpers
     # devenv
     # utilities
+    wl-clipboard
+    mpv
+
     zip
     xz
     unzip
@@ -76,9 +82,6 @@
       # dconf dump / > dconf.settings
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          appindicator.extensionUuid
-        ];
 
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
         last-selected-power-profile = "power-saver";
