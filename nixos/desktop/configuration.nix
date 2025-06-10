@@ -87,23 +87,6 @@
     #media-session.enable = true;
   };
 
-  #--- Enable and configure syncthing.
-  # services.syncthing = {
-  #   enable = true;
-  #   openDefaultPorts = true;
-  #   user = "evan";
-  #   # settings = {
-  #   #   devices."homelab".id = "2B5LXHB-NE2FZ3F-M34RP6Y-G3NS2PD-JGN6CUH-KV3FWVI-ZAXEEJ5-QIZ77A3";
-  #   #   folders."Documents" = {
-  #   #     path = "/home/evan/Documents/";
-  #   #     devices = ["homelab"];
-  #   #   };
-  #   # };
-  # };
-  # Don't create default ~/Sync folder
-  # systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
-  # ---
-
   # --- Define a user account.---
   # Don't forget to set a password with ‘passwd’.
   users.users.evan = {
@@ -130,7 +113,9 @@
     uv
     wl-clipboard-x11
     devenv
+    easyeffects
   ];
+
   # Packages to remove from gnome base install
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
