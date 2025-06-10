@@ -86,6 +86,7 @@
       "org/gnome/desktop/interface".show-battery-percentage = true;
       "org/gnome/desktop/background" = {
         picture-uri = "file://${config.home.homeDirectory}/.local/share/backgrounds/molly-wallpaper.jpg";
+        picture-uri-dark = "file://${config.home.homeDirectory}/.local/share/backgrounds/molly-wallpaper.jpg";
       };
     };
   };
