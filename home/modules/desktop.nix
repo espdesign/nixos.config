@@ -3,7 +3,9 @@
   pkgs,
   ...
 }: {
-  programs.ghostty.font-size = 13;
+  programs.ghostty.settings = {
+    font-size = 12;
+  };
   dconf = {
     enable = true;
     settings = {
