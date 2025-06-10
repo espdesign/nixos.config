@@ -167,7 +167,7 @@
       settings = {
         theme = "dark:GruvboxDark,light:GruvboxLight";
         window-decoration = "auto";
-        font-size = 16;
+        font-size = 13;
         background-opacity = 0.95;
         background-blur = true;
       };
