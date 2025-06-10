@@ -47,7 +47,7 @@
           }
         ];
       };
-desktop = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -62,7 +62,7 @@ desktop = nixpkgs.lib.nixosSystem {
             home-manager.useUserPackages = true;
             home-manager.users.evan = {
               imports = [
-                ./home/home.nix
+                ./home/home-desktop.nix
                 nvf.homeManagerModules.default
               ];
             };
