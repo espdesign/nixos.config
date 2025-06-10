@@ -82,7 +82,7 @@
       # dconf dump / > dconf.settings
       "org/gnome/shell" = {
         disable-user-extensions = false;
-
+        enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
         last-selected-power-profile = "power-saver";
       };
