@@ -12,7 +12,7 @@
     shellAliases = {
       ll = "ls -l";
       edit = "sudo -e";
-      update = "sudo nixos-rebuild switch --flake .#framework";
+      update = "sudo nixos-rebuild switch --flake"; # make sure to add hostname and dir .#framework"
     };
   };
 }
