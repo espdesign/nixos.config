@@ -47,6 +47,28 @@
           }
         ];
       };
+desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nixos/desktop/configuration.nix
+          # reduce disk space module
+          ./nixos/modules/reduce-disk-use.nix
+          #enable virt-manager, also make sure to enable home.nix module for virt-manager
+          ./nixos/modules/virt-manager.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.evan = {
+              imports = [
+                ./home/home.nix
+                nvf.homeManagerModules.default
+              ];
+            };
+          }
+        ];
+      };
     };
   };
 }
