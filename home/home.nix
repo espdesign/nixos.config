@@ -19,7 +19,6 @@
     #gnome specific
     dconf
     dconf-editor
-    gnomeExtensions.appindicator
 
     #used non-free apps
     obsidian
@@ -77,8 +76,8 @@
       # dconf dump / > dconf.settings
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = [
-          "appindicatorsupport@rgcjonas.gmail.com"
+        enabled-extensions = with pkgs.gnomeExtensions; [
+          appindicator.extensionUuid
         ];
 
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
