@@ -84,7 +84,6 @@
         disable-user-extensions = false;
         enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
-        last-selected-power-profile = "power-saver";
       };
 
       "org/gtk/settings/file-chooser/clock-format".custom-value = "12h";
