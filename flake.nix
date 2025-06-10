@@ -62,7 +62,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.evan = {
               imports = [
-                ./home/home-desktop.nix
+                ./home/home.nix
                 nvf.homeManagerModules.default
               ];
             };
