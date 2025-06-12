@@ -94,7 +94,7 @@
   users.users.evan = {
     isNormalUser = true;
     description = "Evan Pendergraft";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
   };
   # ---
@@ -151,6 +151,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  virtualisation.docker.enable = true;
   # --- Static Config ----
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
