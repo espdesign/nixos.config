@@ -23,6 +23,7 @@
     gnomeExtensions.appindicator
 
     #used non-free apps
+    spotify
     obsidian
     discord
     ungoogled-chromium
