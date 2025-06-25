@@ -146,11 +146,24 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedTCPPorts = [80];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [80 443];
+    # allowedUDPPortRanges = [
+    #   {
+    #     from = 4000;
+    #     to = 4007;
+    #   }
+    #   {
+    #     from = 8000;
+    #     to = 8010;
+    #   }
+    # ];
+  };
   virtualisation.docker.enable = true;
   # --- Static Config ----
   # This value determines the NixOS release from which the default
