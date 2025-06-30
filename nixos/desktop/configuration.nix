@@ -100,7 +100,7 @@
   # ---
 
   #set default shell to be zsh
-  programs.zsh.enable = true;
+  #programs.zsh.enable = true;
   #set default editor
   environment.variables = {
     EDITOR = "nvim";
@@ -152,7 +152,7 @@
   # networking.firewall.enable = false;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [80 443];
+    allowedTCPPorts = [80 443 3306];
     # allowedUDPPortRanges = [
     #   {
     #     from = 4000;

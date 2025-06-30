@@ -154,7 +154,7 @@
               format.enable = true;
             };
             python.enable = true;
-            python.lsp.server = "pyright";
+            python.format.enable = true;
           };
         };
       };
