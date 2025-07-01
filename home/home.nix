@@ -81,15 +81,17 @@
       # have activated already
 
       # dconf dump / > dconf.settings
-      "org/gnome/desktop/interface/clock-format".custom-value = "12h";
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
         favorite-apps = ["org.gnome.Nautilus.desktop" "firefox.desktop" "com.mitchellh.ghostty.desktop"];
       };
 
-      "org/gtk/settings/file-chooser/clock-format".custom-value = "12h";
-      "org/gnome/desktop/interface".show-battery-percentage = true;
+      "org/gnome/desktop/interface" = {
+        show-battery-percentage = true;
+        clock-format = "12h";
+      };
+      # set desktop background for dark and light mode.
       "org/gnome/desktop/background" = {
         picture-uri = "file://${config.home.homeDirectory}/.local/share/backgrounds/molly-wallpaper.jpg";
         picture-uri-dark = "file://${config.home.homeDirectory}/.local/share/backgrounds/molly-wallpaper.jpg";
