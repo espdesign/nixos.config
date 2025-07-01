@@ -81,6 +81,7 @@
       # have activated already
 
       # dconf dump / > dconf.settings
+      "org/gnome/desktop/interface/clock-format".custom-value = "12h";
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
