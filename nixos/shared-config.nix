@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     code-cursor
     bottles
+    qbittorrent
   ];
   virtualisation.docker.enable = true;
 }
