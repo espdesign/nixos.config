@@ -8,6 +8,7 @@
   environment.pathsToLink = ["/share/zsh"];
   environment.systemPackages = with pkgs; [
     vscode
+    devenv
     bottles
     qbittorrent
   ];
