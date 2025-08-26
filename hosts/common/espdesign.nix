@@ -35,6 +35,6 @@
     # ];
     packages = [inputs.home-manager.packages.${pkgs.system}.default];
   };
-  home-manager.users.m3tam3re =
+  home-manager.users.espdesign =
     import ../../../home/espdesign/${config.networking.hostName}.nix;
 }
