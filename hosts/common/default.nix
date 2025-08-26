@@ -1,6 +1,18 @@
 # Common configuration for all hosts
-
-{ lib, inputs, outputs, ... }: {
+{
+  lib,
+  inputs,
+  outputs,
+  ...
+}: {
+  imports = [
+    ./users
+    inputs.home-manager.nixosModules.home-manager
+  ];
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = {inherit inputs outputs;};
+  };
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -39,8 +51,9 @@
       options = "--delete-older-than 30d";
     };
     optimise.automatic = true;
-    registry = (lib.mapAttrs (_: flake: { inherit flake; }))
+    registry =
+      (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
-    nixPath = [ "/etc/nix/path" ];
+    nixPath = ["/etc/nix/path"];
   };
 }

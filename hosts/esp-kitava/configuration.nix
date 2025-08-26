@@ -89,15 +89,7 @@
     #media-session.enable = true;
   };
 
-  # --- Define a user account.---
-  # Don't forget to set a password with ‘passwd’.
-  users.users.espdesign = {
-    isNormalUser = true;
-    description = "Evan Pendergraft";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
-    # shell = pkgs.zsh;
-  };
+
   # ---
   home-manager = {
   useUserPackages = true;
