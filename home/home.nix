@@ -9,6 +9,7 @@
     ./modules/zsh.nix
     #./modules/distrobox.nix
     ./modules/virt-manager.nix
+    ./modules/exiled-exchange-2.nix
   ];
 
   # TODO please change the username & home directory to your own
