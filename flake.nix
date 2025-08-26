@@ -43,6 +43,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [./hosts/esp-kitava];
       };
+      esp-sin = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/esp-sin];
+      };
     };
     homeConfigurations = {
       "espdesign@esp-kitava" = home-manager.lib.homeManagerConfiguration {
