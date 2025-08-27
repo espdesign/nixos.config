@@ -12,12 +12,11 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       fira-code
-      fira-code-symbols
-      fira-code-nerdfont
+
       font-manager
-      font-awsome_5
+      font-awesome_5
       noto-fonts
-      sourcecodepro
+      
       jetbrains-mono
     ];
   };
