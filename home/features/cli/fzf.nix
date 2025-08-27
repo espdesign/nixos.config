@@ -14,5 +14,15 @@ in {
       enableFishIntegration = true;
     };
   };
+  # colors = {
+  #   "fg" = "#f8f8f8f2";
+  # };
+  # defaultOptions = [
+  #   "--preview='bat --color=always -n{}'"
+  #   "--bind 'ctrl-/:toggle-preview'"
+  # ];
+  # defaultCommand = "fd --type f --exclude .git --follow --hidden";
+
+
 }
 
