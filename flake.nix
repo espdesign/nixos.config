@@ -21,6 +21,11 @@
 
     #add nixos hardware for framework presets.
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
+    dotfiles = {
+      url = "git+https://github.com/espdesign/dotfiles.config.git";
+      flake = false;
+    };
   };
 
   outputs = {
