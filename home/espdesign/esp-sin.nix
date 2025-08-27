@@ -11,6 +11,7 @@
       #these are located in /home/features/cli/*.nix
       fish.enable = true;
       fzf.enable = true;
+      syncthing.enable = true;
     };
     desktop = {
       firefox.enable = true;

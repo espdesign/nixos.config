@@ -3,6 +3,8 @@
   imports = [
     ./fish.nix
     ./fzf.nix
+    ./ghostty.nix
+    ./syncthing.nix
     ];
   # programs.zoxide = {
   #   enable = true;
