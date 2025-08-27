@@ -1,6 +1,9 @@
 #default cli features to add
 {pkgs, ...}: {
-  imports = [./fish.nix];
+  imports = [
+    ./fish.nix
+    ./fzf.nix
+    ];
   # programs.zoxide = {
   #   enable = true;
   #   enableFishIntegration = true;
