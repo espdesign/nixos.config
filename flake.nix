@@ -15,8 +15,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     #add nixos hardware for framework presets.
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -52,7 +53,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/esp-sin
-          # nixos-hardware.nixosModules.framework-12th-gen-intel
+          nixos-hardware.nixosModules.framework-12th-gen-intel
         ];
       };
     };
