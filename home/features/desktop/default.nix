@@ -4,6 +4,7 @@
     ./firefox.nix
     ./dconf.nix
     ./fonts.nix
+    ./easyeffects.nix
     ];
 
   home.packages = with pkgs; [

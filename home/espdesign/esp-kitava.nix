@@ -2,7 +2,7 @@
   imports = [
     ./dotfiles
     ../common
-    
+
     ./home.nix
     
     ../features/cli # add cli features
@@ -20,6 +20,8 @@
     desktop = {
       firefox.enable = true;
       dconf.enable = true;
+      fonts.enable = true;
+      easyeffects.enable = true;
     };
   };
 }
