@@ -20,7 +20,7 @@ in {
         folders = {
           "syncdocs" = {
             id = "gfrgi-utm7w";
-            path = "/home/evan/Documents/syncdocs";
+            path = "/home/espdesign/Documents/syncdocs";
             devices = ["homelab"];
           };
         };
