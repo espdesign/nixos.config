@@ -24,6 +24,7 @@
   home.packages =  with pkgs; [
     #NOTE - Install Packages HERE?!?
     cowsay
+    neovim
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
