@@ -9,7 +9,7 @@ in {
   options.features.desktop.gnome.enable = mkEnableOption "enable extended gnome configuration";
 
   config = mkIf cfg.enable {
-    home.file.".local/share/backgrounds/wallpaper-molly.jpg".source = ../wallpaper-molly.jpg;
+    home.file.".local/share/backgrounds/wallpaper-molly.jpg".source = ./wallpaper-molly.jpg;
     dconf = {
       enable = true;
       settings = {
