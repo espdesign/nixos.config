@@ -58,4 +58,5 @@
     nixPath = ["/etc/nix/path"];
   };
   users.defaultUserShell = pkgs.fish;
+  virtualisation.docker.enable = true;
 }

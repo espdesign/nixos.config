@@ -18,6 +18,7 @@
 
   # programs.bat = {enable = true;};
 
+  
   home.packages = with pkgs; [
     coreutils
     fd 
@@ -28,5 +29,16 @@
     ripgrep
     tldr
     zip
+    wl-clipboard
+    zip
+    xz
+    unzip
+    ripgrep
+    yq-go
+    nmap
+    file
+    which
+    glow
+    btop
   ];
 }
