@@ -17,6 +17,7 @@
     desktop = {
       firefox.enable = true;
       dconf.enable = true;
+      fonts.enable = true;
     };
   };
 }

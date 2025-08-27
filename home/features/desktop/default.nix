@@ -3,6 +3,7 @@
   imports = [
     ./firefox.nix
     ./dconf.nix
+    ./fonts.nix
     ];
 
   home.packages = with pkgs; [
