@@ -15,7 +15,7 @@
     gnomeExtensions.appindicator
 
     spotify
-    obisidan
+    obsidian
     discord
     ungoogled-chromium
     slack
