@@ -19,13 +19,14 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     #add nixos hardware for framework presets.
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # Consider pinning this too
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = {
     self,
     home-manager,
     nixpkgs,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -51,7 +52,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/esp-sin
-          nixos-hardware.nixosModules.framework-12th-gen-intel
+          # nixos-hardware.nixosModules.framework-12th-gen-intel
         ];
       };
     };
