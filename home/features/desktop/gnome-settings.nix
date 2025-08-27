@@ -4,9 +4,9 @@
   ...
 }:
 with lib; let
-  cfg = config.features.desktop.gnome;
+  cfg = config.features.desktop.gnomesettings;
 in {
-  options.features.desktop.gnome.enable = mkEnableOption "enable extended gnome configuration";
+  options.features.desktop.gnomesettings.enable = mkEnableOption "enable extended gnome configuration";
 
   config = mkIf cfg.enable {
     home.file.".local/share/backgrounds/wallpaper-molly.jpg".source = ./wallpaper-molly.jpg;
