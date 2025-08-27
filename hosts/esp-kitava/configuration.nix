@@ -112,6 +112,7 @@
     git
   ];
   programs.fish.enable = true;
+
   # # Packages to remove from gnome base install
   # environment.gnome.excludePackages = with pkgs; [
   #   gnome-tour

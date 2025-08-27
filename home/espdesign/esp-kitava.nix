@@ -3,6 +3,7 @@
     ./home.nix
     ../common
     ../features/cli # add cli features
+    ../features/desktop # add desktop gui features
   ];
 
   features = {
@@ -10,6 +11,9 @@
       #these are located in /home/features/cli/*.nix
       fish.enable = true;
       fzf.enable = true;
+    };
+    desktop = {
+      firefox.enable = true;
     };
   };
 }
