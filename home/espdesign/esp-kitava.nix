@@ -16,7 +16,7 @@
     };
     desktop = {
       firefox.enable = true;
-      gnomesettings.enable = true;
+      dconf.enable = true;
     };
   };
 }

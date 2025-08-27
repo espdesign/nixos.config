@@ -2,6 +2,7 @@
 {pkgs, ...}: {
   imports = [
     ./firefox.nix
+    ./dconf.nix
     ];
 
   home.packages = with pkgs; [
