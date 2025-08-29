@@ -1,75 +1,72 @@
 {
-  description = "NixOS configuration with flakes";
+  description = ''
+    For questions just DM me on X: https://twitter.com/@m3tam3re
+    There is also some NIXOS content on my YT channel: https://www.youtube.com/@m3tam3re
+
+    One of the best ways to learn NIXOS is to read other peoples configurations. I have personally learned a lot from Gabriel Fontes configs:
+    https://github.com/Misterio77/nix-starter-configs
+    https://github.com/Misterio77/nix-config
+
+    Please also check out the starter configs mentioned above.
+  '';
+
   inputs = {
-    #Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    #Nixos Hardware
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # Consider pinning this too
-
-    #Neovim nix
-    nvf.url = "github:notashelf/nvf";
+    #add nixos hardware for framework presets.
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    
+    dotfiles = {
+      url = "git+https://github.com/espdesign/dotfiles.config.git";
+      flake = false;
+    };
   };
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    nixos-hardware,
-    nvf,
-  }: {
-    nixosConfigurations = {
-      # replace <your-hostname> with your actual hostname
-      framework = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./nixos/framework/configuration.nix
-          # reduce disk space module
-          ./nixos/modules/reduce-disk-use.nix
-          #enable virt-manager, also make sure to enable home.nix module for virt-manager
-          ./nixos/modules/virt-manager.nix
 
+  outputs = {
+    self,
+    home-manager,
+    nixpkgs,
+    nixos-hardware,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    systems = [
+      "aarch64-linux"
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
+    packages =
+      forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    overlays = import ./overlays {inherit inputs;};
+    nixosConfigurations = {
+      esp-kitava = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/esp-kitava];
+      };
+      #esp-sin is my framework 12th gen laptop
+      esp-sin = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/esp-sin
           nixos-hardware.nixosModules.framework-12th-gen-intel
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.evan = {
-              imports = [
-                ./home/home.nix
-                ./home/modules/framework.nix
-                nvf.homeManagerModules.default
-              ];
-            };
-          }
         ];
       };
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./nixos/desktop/configuration.nix
-          # reduce disk space module
-          ./nixos/modules/reduce-disk-use.nix
-          #enable virt-manager, also make sure to enable home.nix module for virt-manager
-          ./nixos/modules/virt-manager.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.evan = {
-              imports = [
-                ./home/home.nix
-                ./home/modules/desktop.nix
-                nvf.homeManagerModules.default
-              ];
-            };
-          }
-        ];
+    };
+    homeConfigurations = {
+      "espdesign@esp-kitava" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/espdesign/esp-kitava.nix];
       };
     };
   };

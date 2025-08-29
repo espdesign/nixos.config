@@ -3,16 +3,17 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
+  inputs,
+  outputs,
+  lib,
   pkgs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../shared-config.nix
-    # enable nvidia drivers.
-
-    ../modules/nvidia.nix
+    inputs.home-manager.nixosModules.home-manager
+    ./nvidia.nix
   ];
 
   # Bootloader.
@@ -23,7 +24,7 @@
   # DISABLED FOR NVIDIA DRIVERS
   #boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "evanspc"; # Define your hostname.
+  networking.hostName = "esp-kitava"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.hosts = {
     "192.168.1.201" = ["home.lab"];
@@ -89,51 +90,54 @@
     #media-session.enable = true;
   };
 
-  # --- Define a user account.---
-  # Don't forget to set a password with ‘passwd’.
-  users.users.evan = {
-    isNormalUser = true;
-    description = "Evan Pendergraft";
-    extraGroups = ["networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
-  };
-  # ---
 
+  # ---
+  home-manager = {
+  useUserPackages = true;
+  extraSpecialArgs = { inherit inputs outputs; };
+  users.espdesign =
+    import ../../home/espdesign/${config.networking.hostName}.nix;
+  };
   #set default shell to be zsh
   #programs.zsh.enable = true;
   #set default editor
-  environment.variables = {
-    EDITOR = "nvim";
-    UV_PYTHON_DOWNLOADS = "never";
-  };
+  # environment.variables = {
+  #   EDITOR = "nvim";
+  #   UV_PYTHON_DOWNLOADS = "never";
+  # };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
+    nano
+    vim
     git
-    python313
-    uv
-    wl-clipboard-x11
-    devenv
-    easyeffects
   ];
-
-  # Packages to remove from gnome base install
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-  ];
-  # Install Fonts
-  fonts.packages = with pkgs; [
-    # Nerd Fonts
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.fira-code
-  ];
+  programs.fish.enable = true;
+  
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+
+  # # Packages to remove from gnome base install
+  # environment.gnome.excludePackages = with pkgs; [
+  #   gnome-tour
+  # ];
+
+  # # Install Fonts
+  # fonts.packages = with pkgs; [
+  #   # Nerd Fonts
+  #   nerd-fonts.droid-sans-mono
+  #   nerd-fonts.fira-code
+  # ];
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  #   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  # };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -149,21 +153,21 @@
   # networking.firewall.allowedTCPPorts = [80];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [80 443 3306];
-    # allowedUDPPortRanges = [
-    #   {
-    #     from = 4000;
-    #     to = 4007;
-    #   }
-    #   {
-    #     from = 8000;
-    #     to = 8010;
-    #   }
-    # ];
-  };
+  # # networking.firewall.enable = false;
+  # networking.firewall = {
+  #   enable = true;
+  #   allowedTCPPorts = [80 443 3306];
+  #   # allowedUDPPortRanges = [
+  #   #   {
+  #   #     from = 4000;
+  #   #     to = 4007;
+  #   #   }
+  #   #   {
+  #   #     from = 8000;
+  #   #     to = 8010;
+  #   #   }
+  #   # ];
+  # };
   # --- Static Config ----
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -172,15 +176,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  #Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  # ---
-  #devenv settings
-  nix.extraOptions = ''
-    extra-substituters = https://devenv.cachix.org
-    extra-trusted-public-keys = devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-  '';
 }
