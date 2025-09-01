@@ -42,5 +42,6 @@
     which
     glow
     btop
+    yt-dlp
   ];
 }
