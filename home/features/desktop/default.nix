@@ -8,7 +8,8 @@
     ];
 
   home.packages = with pkgs; [
-    vscode
+    zed-editor
+
     bottles
     qbittorrent
 
