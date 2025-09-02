@@ -25,7 +25,6 @@
     #NOTE - Install Packages HERE?!?
     cowsay
     neovim
-    yt-dlp
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -44,7 +43,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "zeditor";
   };
 
 
