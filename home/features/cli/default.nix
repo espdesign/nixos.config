@@ -43,5 +43,6 @@
     glow
     btop
     yt-dlp
+    gcc
   ];
 }
