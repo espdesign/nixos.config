@@ -27,7 +27,8 @@
 
     libreoffice
     mpv
-    
+
+    podman-desktop
   ];
-  
+
 }

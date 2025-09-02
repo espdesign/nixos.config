@@ -9,7 +9,7 @@
   # programs.zoxide = {
   #   enable = true;
   #   enableFishIntegration = true;
-    
+
   # };
   # programs.eza = {
   #   enable = true;
@@ -20,10 +20,10 @@
 
   # programs.bat = {enable = true;};
 
-  
+
   home.packages = with pkgs; [
     coreutils
-    fd 
+    fd
     htop
     httpie
     jq
@@ -44,5 +44,7 @@
     btop
     yt-dlp
     gcc
+
+    docker-compose
   ];
 }
