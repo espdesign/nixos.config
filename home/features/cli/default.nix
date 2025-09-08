@@ -49,6 +49,6 @@
 
     nixd #nix language server
     nil
-    pylsp
+    
   ];
 }
