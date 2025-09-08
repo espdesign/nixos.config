@@ -44,11 +44,13 @@
     btop
     yt-dlp
     gcc
+    cargo
+    rustup
 
     docker-compose
 
     nixd #nix language server
     nil
-    
+
   ];
 }
