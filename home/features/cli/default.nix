@@ -58,6 +58,7 @@
     docker-compose
 
     nixd #nix language server
+    alejandra #nix formatter
     nil
 	
     #python tools
