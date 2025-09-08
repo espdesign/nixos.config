@@ -43,7 +43,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vi";
+    EDITOR = "nvim";
   };
 
 
