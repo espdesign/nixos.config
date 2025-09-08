@@ -5,6 +5,7 @@
     ./fzf.nix
     ./ghostty.nix
     ./syncthing.nix
+    ./lua51.nix
     ];
   # programs.zoxide = {
   #   enable = true;
@@ -46,6 +47,11 @@
     gcc
     cargo
     
+    #kickstart :checkhealth install deps
+    luajitPackages.luarocks_bootstrap
+    lua
+    wget
+    gnumake
 
     docker-compose
 
