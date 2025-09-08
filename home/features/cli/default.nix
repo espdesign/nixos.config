@@ -57,6 +57,9 @@
 
     nixd #nix language server
     nil
-
+	
+    #python tools
+    pyright
+    black
   ];
 }
