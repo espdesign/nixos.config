@@ -48,6 +48,6 @@
     docker-compose
 
     nixd #nix language server
-
+    nil
   ];
 }
