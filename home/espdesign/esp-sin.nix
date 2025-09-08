@@ -13,6 +13,7 @@
       fzf.enable = true;
       syncthing.enable = true;
       ghostty.enable = true;
+      lua51.enable = true;
     };
     desktop = {
       firefox.enable = true;

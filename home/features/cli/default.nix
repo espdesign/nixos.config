@@ -49,7 +49,7 @@
     
     #kickstart :checkhealth install deps
     luajitPackages.luarocks_bootstrap
-    lua
+    
     wget
     gnumake
 
