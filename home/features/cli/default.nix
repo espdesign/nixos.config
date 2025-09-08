@@ -46,5 +46,8 @@
     gcc
 
     docker-compose
+
+    nixd #nix language server
+
   ];
 }
