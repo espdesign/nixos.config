@@ -5,8 +5,8 @@
     ./fzf.nix
     ./ghostty.nix
     ./syncthing.nix
-    ./lua51.nix
-    ];
+    ./nvim-deps.nix
+  ];
   # programs.zoxide = {
   #   enable = true;
   #   enableFishIntegration = true;
@@ -20,7 +20,6 @@
   # };
 
   # programs.bat = {enable = true;};
-
 
   home.packages = with pkgs; [
     coreutils
@@ -46,21 +45,9 @@
     yt-dlp
     gcc
     cargo
-    
-    #kickstart :checkhealth install deps
-    luajitPackages.luarocks_bootstrap
-    tree-sitter
-    nodejs_24
-    
     wget
     gnumake
-
     docker-compose
-
-    nixd #nix language server
-    alejandra #nix formatter
-    nil
-	
     #python tools
     pyright
     black

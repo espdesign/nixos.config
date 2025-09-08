@@ -5,8 +5,7 @@
   ...
 }:
 with lib; let
-  # Import the specified nixpkgs version from the user's provided URL.
-  # We name it `luaPkgs` to avoid conflict with the system's `pkgs`.
+  cfg = config.features.cli.nvim-deps;
   luaPkgs =
     import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/e6f23dc08d3624daab7094b701aa3954923c6bbb.tar.gz";
@@ -18,19 +17,18 @@ with lib; let
       # in the pure evaluation context of fetchTarball.
       system = pkgs.system;
     };
-
-  # Define a configuration setting for this feature.
-  cfg = config.features.cli.lua51;
 in {
-  # Add a new option to enable the Lua 5.1 feature.
-  options.features.cli.lua51 = {
-    enable = mkEnableOption "enable Lua 5.1 from the specified nixpkgs version";
-  };
+  options.features.cli.nvim-deps.enable = mkEnableOption "enable deps for neovim dotfile config";
 
   config = mkIf cfg.enable {
-    # When enabled, add lua5.1 to the environment.systemPackages list,
-    # making it available to all users on the system.
     home.packages = [
+      #kickstart :checkhealth install deps
+      luajitPackages.luarocks_bootstrap
+      tree-sitter
+      nodejs_24
+      nixd #nix language server
+      alejandra #nix formatter
+      nil
       luaPkgs.lua51Packages.lua
       luaPkgs.lua51Packages.jsregexp
     ];

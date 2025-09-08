@@ -4,7 +4,7 @@
     ../common
 
     ./home.nix
-    
+
     ../features/cli # add cli features
     ../features/desktop # add desktop gui features
   ];
@@ -16,7 +16,7 @@
       fzf.enable = true;
       syncthing.enable = true;
       ghostty.enable = true;
-      lua51.enable = true;
+      nvim-deps.enable = true;
     };
     desktop = {
       firefox.enable = true;
