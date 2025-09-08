@@ -49,6 +49,8 @@
     
     #kickstart :checkhealth install deps
     luajitPackages.luarocks_bootstrap
+    tree-sitter
+    nodejs_24
     
     wget
     gnumake
@@ -61,5 +63,7 @@
     #python tools
     pyright
     black
+    python313Packages.pynvim
+    python313Packages.debugpy
   ];
 }
