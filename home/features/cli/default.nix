@@ -45,7 +45,7 @@
     yt-dlp
     gcc
     cargo
-    rustup
+    
 
     docker-compose
 
