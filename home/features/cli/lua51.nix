@@ -32,6 +32,7 @@ in {
     # making it available to all users on the system.
     home.packages = [
       luaPkgs.lua51Packages.lua
+      luaPkgs.lua51Packages.jsregexp
     ];
   };
 

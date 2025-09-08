@@ -3,11 +3,11 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1757342308,
-        "narHash": "sha256-7dBiD1hMiMASeXb+4eKyzNnUL2Rr+2LuNCNZKmgdVzk=",
+        "lastModified": 1757343769,
+        "narHash": "sha256-dhv02OseR5V0iGEvRK1Atlnej3SouBUQWvdewf2ff4Q=",
         "ref": "refs/heads/main",
-        "rev": "6aba3c618a527017bd268164559b8bd04afd35e4",
-        "revCount": 10,
+        "rev": "17b516e5fabde6cb13513cb97e30646e60a8d4fb",
+        "revCount": 12,
         "type": "git",
         "url": "https://github.com/espdesign/dotfiles.config.git"
       },
