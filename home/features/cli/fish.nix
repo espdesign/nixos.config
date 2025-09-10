@@ -15,6 +15,7 @@ in {
         set -x NIX_PATH nixpkgs=channel:nixos-unstable
         set -x NIX_LOG info
         set -x TERMINAL ghostty
+        set -gx EDITOR nvim
       '';
       shellAbbrs = {
         # ".." = "cd ..";
@@ -23,4 +24,3 @@ in {
     };
   };
 }
-
