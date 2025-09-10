@@ -22,6 +22,7 @@ in {
       lua51Packages.jsregexp
       # luaPkgs.lua51Packages.lua
       # luaPkgs.lua51Packages.jsregexp
+      nodePackages.coc-markdownlint
     ];
   };
 }
