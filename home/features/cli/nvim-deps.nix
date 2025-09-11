@@ -23,6 +23,7 @@ in {
       # luaPkgs.lua51Packages.lua
       # luaPkgs.lua51Packages.jsregexp
       markdownlint-cli
+      lua-language-server
     ];
   };
 }
