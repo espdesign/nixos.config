@@ -90,13 +90,12 @@
     #media-session.enable = true;
   };
 
-
   # ---
   home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.espdesign =
-    import ../../home/espdesign/${config.networking.hostName}.nix;
+    useUserPackages = true;
+    extraSpecialArgs = {inherit inputs outputs;};
+    users.espdesign =
+      import ../../home/espdesign/${config.networking.hostName}.nix;
   };
   #set default shell to be zsh
   #programs.zsh.enable = true;
@@ -113,13 +112,14 @@
     git
   ];
   programs.fish.enable = true;
-  
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+  virtualisation.vmware.host.enable = true;
 
   # # Packages to remove from gnome base install
   # environment.gnome.excludePackages = with pkgs; [
