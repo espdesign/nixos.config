@@ -121,6 +121,7 @@
   };
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["espdesign"];
+  boot.kernelParams = ["kvm.enable_virt_at_load=0"];
   # # Packages to remove from gnome base install
   # environment.gnome.excludePackages = with pkgs; [
   #   gnome-tour
