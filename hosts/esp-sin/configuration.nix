@@ -23,7 +23,7 @@
   # DISABLED FOR NVIDIA DRIVERS
   #boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "esp-kitava"; # Define your hostname.
+  networking.hostName = "esp-sin"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.hosts = {
     "192.168.1.201" = ["home.lab"];
@@ -89,13 +89,12 @@
     #media-session.enable = true;
   };
 
-
   # ---
   home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.espdesign =
-    import ../../home/espdesign/${config.networking.hostName}.nix;
+    useUserPackages = true;
+    extraSpecialArgs = {inherit inputs outputs;};
+    users.espdesign =
+      import ../../home/espdesign/${config.networking.hostName}.nix;
   };
   #set default shell to be zsh
   #programs.zsh.enable = true;
@@ -111,7 +110,7 @@
     vim
     git
   ];
-  
+
   programs.fish.enable = true;
   # # Packages to remove from gnome base install
   # environment.gnome.excludePackages = with pkgs; [

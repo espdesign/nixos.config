@@ -47,7 +47,7 @@
     cargo
     wget
     gnumake
-    docker-compose
+    podman-compose
     #python tools
     pyright
     black
