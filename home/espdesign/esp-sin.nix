@@ -2,6 +2,7 @@
   imports = [
     ./home.nix
     ../common
+    ./dotfiles
     ../features/cli # add cli features
     ../features/desktop # add desktop gui features
   ];
