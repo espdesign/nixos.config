@@ -53,5 +53,6 @@
     black
     python313Packages.pynvim
     python313Packages.debugpy
+    cachix
   ];
 }
