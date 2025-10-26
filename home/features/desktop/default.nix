@@ -5,7 +5,7 @@
     ./dconf.nix
     ./fonts.nix
     ./easyeffects.nix
-    ];
+  ];
 
   home.packages = with pkgs; [
     zed-editor
@@ -29,6 +29,6 @@
     mpv
 
     podman-desktop
+    path-of-building
   ];
-
 }
