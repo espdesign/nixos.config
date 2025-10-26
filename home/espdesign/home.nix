@@ -58,12 +58,8 @@
     #set git username and email
     git = {
       enable = true;
-      settings = {
-        user = {
-          name = "espdesign";
-          email = "evanpendergraft@gmail.com";
-        };
-      };
+      userName = "espdesign";
+      userEmail = "evanpendergraft@gmail.com";
     };
     # add nix-index, a file database for nixpkgs.
     nix-index = {
