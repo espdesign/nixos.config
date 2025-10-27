@@ -12,7 +12,7 @@ in {
     programs.ghostty = {
       enable = true;
       settings = {
-        theme = "dark:GruvboxDark,light:GruvboxLight";
+        theme = "dark:Gruvbox Dark,light:Gruvbox Light";
         window-decoration = "auto";
         background-opacity = 0.95;
         background-blur = true;
@@ -20,4 +20,3 @@ in {
     };
   };
 }
-

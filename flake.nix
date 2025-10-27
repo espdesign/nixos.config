@@ -15,9 +15,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     #add nixos hardware for framework presets.
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
