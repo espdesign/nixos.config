@@ -58,10 +58,10 @@
     nixPath = ["/etc/nix/path"];
   };
   users.defaultUserShell = pkgs.fish;
-
+  programs.wireshark.enable = true;
+  programs.wireshark.dumpcap.enable = true;
   # uncomment for docker if needed
   # virtualisation.docker.enable = true;
-
   # Enable common container config files in /etc/containers
   # https://wiki.nixos.org/wiki/Podman
   virtualisation.containers.enable = true;
@@ -74,5 +74,4 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
-
 }
