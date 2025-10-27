@@ -7,6 +7,7 @@
 
     ../features/cli # add cli features
     ../features/desktop # add desktop gui features
+    ../features/gaming # add gaming packages, and features
   ];
 
   features = {

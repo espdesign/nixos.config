@@ -29,6 +29,5 @@
     mpv
 
     podman-desktop
-    path-of-building
   ];
 }

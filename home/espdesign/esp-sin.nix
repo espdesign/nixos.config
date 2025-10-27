@@ -5,6 +5,7 @@
     ./dotfiles
     ../features/cli # add cli features
     ../features/desktop # add desktop gui features
+    ../features/networking # add networking features
   ];
 
   features = {
