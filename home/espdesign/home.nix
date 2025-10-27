@@ -56,10 +56,18 @@
     gh.enable = true;
 
     #set git username and email
+    # git = {
+    #   enable = true;
+    #   userName = "espdesign";
+    #   userEmail = "evanpendergraft@gmail.com";
+    # };
     git = {
-      enable = true;
-      userName = "espdesign";
-      userEmail = "evanpendergraft@gmail.com";
+      settings = {
+        user = {
+          name = "espdesign";
+          email = "evanpendergraft@gmail.com";
+        };
+      };
     };
     # add nix-index, a file database for nixpkgs.
     nix-index = {
