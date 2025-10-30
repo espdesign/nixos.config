@@ -62,11 +62,10 @@
     #   userEmail = "evanpendergraft@gmail.com";
     # };
     git = {
+      enable = true;
       settings = {
-        user = {
-          name = "espdesign";
-          email = "evanpendergraft@gmail.com";
-        };
+        user.name = "espdesign";
+        user.email = "evanpendergraft@gmail.com";
       };
     };
     # add nix-index, a file database for nixpkgs.
