@@ -8,6 +8,7 @@
   ];
 
   home.packages = with pkgs; [
+    prismlauncher
     path-of-building
   ];
 }
