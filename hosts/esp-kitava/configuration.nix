@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     ./nvidia.nix
+    ./gnome-suspend.nix
   ];
 
   # Bootloader.
