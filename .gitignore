@@ -1,2 +1,6 @@
-result/
+# .gitignore content
 result
+result-*
+.direnv/
+*.qcow2
+*.qcow2*
