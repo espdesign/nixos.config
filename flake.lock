@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1760980295,
+        "narHash": "sha256-LY0FcxU84rqrEYbFo1uCKPolocDBzJD+G99wwKzNysQ=",
+        "ref": "refs/heads/main",
+        "rev": "a55587a7e05769da477990575993857a6ac6bd0f",
+        "revCount": 23,
+        "type": "git",
+        "url": "https://github.com/espdesign/dotfiles.config.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/espdesign/dotfiles.config.git"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +70,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs"

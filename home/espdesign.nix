@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  imports = [
+    ./modules/home-manager/syncthing.nix
+    ./modules/home-manager/zsh.nix
+    ./modules/home-manager/ghostty.nix
+    ./modules/home-manager/neovim.nix
+  ];
   home.username = "espdesign";
   home.homeDirectory = "/home/espdesign";
 
@@ -19,6 +25,47 @@
       };
     };
   };
+  home.packages = with pkgs; [
+    # Core Utils
+    coreutils
+    fd
+    htop
+    httpie
+    jq
+    ripgrep
+    tldr
+    zip
+    unzip
+    xz
+    wl-clipboard
+    file
+    which
+    glow
+    procs
+    yq-go
 
+    # Network / Security
+    nmap
+    wget
+
+    # Dev / Build Tools
+    gcc
+    gnumake
+    cargo
+    cachix
+    podman-compose
+
+    # Python Environment
+    (python3.withPackages (ps:
+      with ps; [
+        pyright
+        black
+        pynvim
+        debugpy
+      ]))
+
+    # Media
+    yt-dlp
+  ];
   home.stateVersion = "24.05";
 }
