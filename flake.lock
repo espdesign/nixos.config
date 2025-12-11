@@ -16,6 +16,28 @@
         "url": "https://github.com/espdesign/dotfiles.config.git"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1765339424,
+        "narHash": "sha256-fjUHzg7BC0NJUiGZeypX/GjjX1THbQWTRgqoQ1IbFzk=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "c6bc83f25f0ce39daae2d0dc62cf95137df1c02d",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -71,6 +93,7 @@
     "root": {
       "inputs": {
         "dotfiles": "dotfiles",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs"

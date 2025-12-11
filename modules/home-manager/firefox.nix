@@ -25,7 +25,7 @@
         "extensions.pocket.enabled" = false; # Disable Pocket
         "identity.fxaccounts.enabled" = false; # Disable Firefox Sync (optional)
       };
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         bitwarden
         sponsorblock
