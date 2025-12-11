@@ -4,17 +4,19 @@
 
   programs.git = {
     enable = true;
-
-    # This maps directly to your ~/.gitconfig structure
-    extraConfig = {
+    settings = {
       user = {
         name = "espdesign";
         email = "evanpendergraft@gmail.com";
       };
 
-      # You can add other standard git settings here too
-      init.defaultBranch = "main";
-      pull.rebase = true;
+      init = {
+        defaultBranch = "main";
+      };
+
+      pull = {
+        rebase = true;
+      };
     };
   };
 
