@@ -52,11 +52,11 @@
       };
   in {
     # Custom Packages (Optional, formatted for all systems)
-    packages = nixpkgs.lib.genAttrs ["x86_64-linux"] (
-      system:
-        import ./pkgs nixpkgs.legacyPackages.${system}
-    );
-
+    # packages = nixpkgs.lib.genAttrs ["x86_64-linux"] (
+    #   system:
+    #     import ./pkgs nixpkgs.legacyPackages.${system}
+    # );
+    #
     # --- HOST CONFIGURATIONS ---
     nixosConfigurations = {
       # Desktop
