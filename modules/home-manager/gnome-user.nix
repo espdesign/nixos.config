@@ -24,6 +24,7 @@
       "org/gnome/desktop/interface" = {
         show-battery-percentage = true;
         clock-format = "12h";
+        color-scheme = "prefer-dark";
       };
 
       # Set desktop background for dark and light mode
