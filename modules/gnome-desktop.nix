@@ -24,5 +24,6 @@
   # Add GNOME specific system packages (like Tweaks)
   environment.systemPackages = with pkgs; [
     gnome-tweaks
+    gnomeExtensions.appindicator
   ];
 }
