@@ -62,7 +62,6 @@
     cargo
     cachix
     podman-compose
-    gh
 
     # Python Environment
     (python3.withPackages (ps:
