@@ -35,6 +35,7 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
+    initialHashedPassword = "$6$N2xGDWXhZ.WnQ2Sr$BKf7SyNZ5fMdUkt7RCGZYYPSiMYJBucgfVVqq.YiFP3RdMx3ACw891k/0h4jA//AhYPNq76tydDLaTce1bikE.";
   };
   #enable zsh system-wide
   programs.zsh.enable = true;
