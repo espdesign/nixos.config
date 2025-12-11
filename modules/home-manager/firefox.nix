@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
 
@@ -6,10 +10,31 @@
     # paste them here!
     profiles.default = {
       isDefault = true;
+      name = "espdesign";
       settings = {
+        # Performance & UI
         "browser.startup.homepage" = "about:blank";
-        "browser.search.region" = "US";
+        "browser.uidensity" = 1; # Compact Mode
+        "browser.tabs.inTitlebar" = 1;
+
+        # Privacy / Annoyances
+        "privacy.trackingprotection.enabled" = true;
+        "dom.security.https_only_mode" = true;
+        "browser.shell.checkDefaultBrowser" = false;
+        "browser.aboutConfig.showWarning" = false;
+        "extensions.pocket.enabled" = false; # Disable Pocket
+        "identity.fxaccounts.enabled" = false; # Disable Firefox Sync (optional)
       };
+      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        ublock-origin
+        bitwarden
+        sponsorblock
+        tampermonkey
+        betterttv
+        privacy-badger
+        #you can find the package names here
+        # https://gitlab.com/rycee/nur-expressions/-/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
+      ];
     };
   };
 }
