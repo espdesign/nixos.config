@@ -4,8 +4,10 @@
   ...
 }: {
   # Nix Settings
-  nix.settings.experimental-features = ["nix-command" "flakes"]; # enable flakes
-
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"]; # enable flakes
+    trusted-users = ["root" "espdesign"]; # allow root and espdesign to use nix
+  };
   # nix garbage collection, https://nixos.wiki/wiki/Storage_optimization#Automation
   nix.gc = {
     automatic = true;
