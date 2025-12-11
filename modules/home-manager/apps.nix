@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     # Editors / Dev
     podman-desktop
@@ -29,6 +33,10 @@
     # Browsers (Ungooled Chromium)
     # Firefox is handled in its own module
     ungoogled-chromium
+
+    # --- YOUR CUSTOM PACKAGES ---
+    # This grabs 'my-hello' from your ./pkgs/default.nix
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.my-hello
   ];
 
   # EasyEffects Service (If you just want it installed)

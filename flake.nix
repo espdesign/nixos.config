@@ -27,6 +27,12 @@
   } @ inputs: let
     inherit (self) outputs;
 
+    # 1. Define the systems you support (usually just x86_64-linux)
+    systems = ["x86_64-linux"];
+
+    # 2. Define the helper function that iterates over those systems
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+
     # --- HELPER FUNCTION ---
     # This reduces boilerplate. It creates a system definition
     # merging the hostname, common modules, and hardware specs.
@@ -58,11 +64,12 @@
       };
   in {
     # Custom Packages (Optional, formatted for all systems)
-    # packages = nixpkgs.lib.genAttrs ["x86_64-linux"] (
-    #   system:
-    #     import ./pkgs nixpkgs.legacyPackages.${system}
-    # );
-    #
+    # Now 'forAllSystems' is defined, so this will work!
+    packages = forAllSystems (system:
+      import ./pkgs {
+        pkgs = nixpkgs.legacyPackages.${system};
+      });
+
     # --- HOST CONFIGURATIONS ---
     nixosConfigurations = {
       # Desktop

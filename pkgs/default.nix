@@ -1,4 +1,5 @@
 # pkgs/default.nix
 {pkgs}: {
-  # example = pkgs.callPackage ./example { };
+  # logical-name = pkgs.callPackage ./folder-name { };
+  my-hello = pkgs.callPackage ./my-hello {};
 }
