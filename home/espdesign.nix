@@ -9,7 +9,6 @@
     ../modules/home-manager/gaming-user.nix
     ../modules/home-manager/gnome-user.nix
   ];
-  nixpkgs.config.allowUnfree = true;
   home.username = "espdesign";
   home.homeDirectory = "/home/espdesign";
 
