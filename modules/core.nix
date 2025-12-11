@@ -35,15 +35,25 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
-    initialHashedPassword = "$6$N2xGDWXhZ.WnQ2Sr$BKf7SyNZ5fMdUkt7RCGZYYPSiMYJBucgfVVqq.YiFP3RdMx3ACw891k/0h4jA//AhYPNq76tydDLaTce1bikE.";
+    initialHashedPassword = "$6$gMclef8wWibtLst0$6f0JIElUbX3DvW78zAOhLOesfigbHrMN0hzRgTDZaFjbG8uP6Nkzjm4an1AM0VriCyrLG8ECrHIJn.6OHbgdP0";
   };
   #enable zsh system-wide
   programs.zsh.enable = true;
+
+  # NOTE IT MAY BE BETTER TO ADD IN ./home-manager/app.nix if you dont want system level
   # Universal packages, or tools you always want accessible
   environment.systemPackages = with pkgs; [
     git
     vim
     wget
     curl
+  ];
+
+  fonts.packages = with pkgs; [
+    fira-code
+    font-manager
+    font-awesome_5
+    noto-fonts
+    jetbrains-mono
   ];
 }
