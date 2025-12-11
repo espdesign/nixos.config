@@ -15,7 +15,7 @@
 
     # Porting your Environment Variables
     # initExtra runs at the end of .zshrc
-    initExtra = ''
+    initContent = ''
       export NIX_PATH=nixpkgs=channel:nixos-unstable
       export NIX_LOG=info
       export TERMINAL=ghostty
