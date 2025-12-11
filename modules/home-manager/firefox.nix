@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.firefox = {
     enable = true;
 
@@ -25,16 +21,6 @@
         "extensions.pocket.enabled" = false; # Disable Pocket
         "identity.fxaccounts.enabled" = false; # Disable Firefox Sync (optional)
       };
-      extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
-        ublock-origin
-        bitwarden
-        sponsorblock
-        tampermonkey
-        betterttv
-        privacy-badger
-        #you can find the package names here
-        # https://gitlab.com/rycee/nur-expressions/-/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
-      ];
     };
   };
 }
