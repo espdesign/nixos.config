@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [
     # Editors / Dev
-    podman-desktop
+
     devenv
     # Remote Desktop
     rustdesk-flutter

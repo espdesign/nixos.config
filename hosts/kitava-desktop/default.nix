@@ -8,6 +8,7 @@
     ../../modules/pipewire-sound.nix # Enables pipewire sound
     ../../modules/printing.nix # Enables printing
     ../../modules/gaming.nix
+    ../../modules/docker.nix
   ];
   networking.hostName = "kitava-desktop";
 

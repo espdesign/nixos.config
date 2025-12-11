@@ -61,7 +61,7 @@
     gnumake
     cargo
     cachix
-    podman-compose
+
 
     # Python Environment
     (python3.withPackages (ps:

@@ -5,6 +5,7 @@
     ../../modules/gnome-desktop.nix # gnome desktop
     ../../modules/pipewire-sound.nix # pipewire sound
     ../../modules/printing.nix # printing
+    ../../modules/docker.nix
   ];
   networking.hostName = "sin-laptop";
 
