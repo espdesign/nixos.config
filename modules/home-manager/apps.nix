@@ -13,6 +13,7 @@
     # Productivity
     obsidian
     libreoffice
+    typst
 
     # Communication
     vesktop
