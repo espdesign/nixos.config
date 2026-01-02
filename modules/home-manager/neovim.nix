@@ -23,7 +23,7 @@
     luajitPackages.luarocks_bootstrap
     lua51Packages.lua
     lua51Packages.jsregexp
-
+    lua-language-server
     # 2. Nix Tools
     nixd # Nix LSP (Excellent choice)
     alejandra # Nix Formatter
