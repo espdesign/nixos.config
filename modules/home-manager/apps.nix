@@ -8,7 +8,8 @@
 
     devenv
     # Remote Desktop
-    rustdesk-flutter
+    # comment out rustdesk because it's not working
+    #rustdesk-flutter
 
     # Productivity
     obsidian
