@@ -8,8 +8,7 @@
 
     devenv
     # Remote Desktop
-    # comment out rustdesk because it's not working
-    #rustdesk-flutter
+    #rustdesk-flutter set to stable.nix module
 
     # Productivity
     obsidian
@@ -17,7 +16,7 @@
     typst
 
     # Communication
-    vesktop
+    #vesktop set to stable.nix module
     slack
     signal-desktop
 
