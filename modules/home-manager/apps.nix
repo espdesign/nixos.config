@@ -8,7 +8,7 @@
 
     devenv
     # Remote Desktop
-    #rustdesk-flutter set to stable.nix module
+    rustdesk-flutter
 
     # Productivity
     obsidian
@@ -16,7 +16,11 @@
     typst
 
     # Communication
-    #vesktop set to stable.nix module
+    vesktop
+    set
+    to
+    stable.nix
+    module
     slack
     signal-desktop
 
@@ -29,7 +33,6 @@
     # GNOME Utilities
     dconf-editor
     gnome-shell-extensions
-    # Note: You already installed 'appindicator' in your system config?
 
     # Browsers (Ungooled Chromium)
     # Firefox is handled in its own module
