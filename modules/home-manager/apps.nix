@@ -17,10 +17,6 @@
 
     # Communication
     vesktop
-    set
-    to
-    stable.nix
-    module
     slack
     signal-desktop
 
