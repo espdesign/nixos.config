@@ -8,6 +8,7 @@
     ../modules/home-manager/apps.nix
     ../modules/home-manager/gaming-user.nix
     ../modules/home-manager/gnome-user.nix
+    ../modules/home-manager/vscode.nix
   ];
   home.username = "espdesign";
   home.homeDirectory = "/home/espdesign";
@@ -61,7 +62,6 @@
     gnumake
     cargo
     cachix
-
 
     # Python Environment
     (python3.withPackages (ps:
