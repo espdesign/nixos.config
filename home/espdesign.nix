@@ -9,6 +9,8 @@
     ../modules/home-manager/gaming-user.nix
     ../modules/home-manager/gnome-user.nix
     ../modules/home-manager/vscode.nix
+    ../modules/home-manager/zed-editor.nix
+    ../modules/home-manager/dev-servers.nix
   ];
   home.username = "espdesign";
   home.homeDirectory = "/home/espdesign";
