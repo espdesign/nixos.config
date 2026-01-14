@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware.nix
     ../../modules/core.nix
     ../../modules/nvidia.nix # Enables nvidia drivers
-    ../../modules/gnome-suspend-fix.nix # Fixes suspend/resume issues with gnome
+    # ../../modules/gnome-suspend-fix.nix # Fixes suspend/resume issues with gnome
     ../../modules/gnome-desktop.nix # Enables gnome desktop
     ../../modules/pipewire-sound.nix # Enables pipewire sound
     ../../modules/printing.nix # Enables printing
