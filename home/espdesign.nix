@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ../modules/home-manager/syncthing.nix
     ../modules/home-manager/zsh.nix
@@ -66,16 +67,19 @@
     cachix
 
     # Python Environment
-    (python3.withPackages (ps:
-      with ps; [
+    (python3.withPackages (
+      ps: with ps; [
         pyright
         black
         pynvim
         debugpy
-      ]))
+      ]
+    ))
 
     # Media
     yt-dlp
+
+    google-chrome
   ];
   home.stateVersion = "24.05";
 }

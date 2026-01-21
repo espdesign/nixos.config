@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     # Editors / Dev
 
@@ -29,10 +30,6 @@
     # GNOME Utilities
     dconf-editor
     gnome-shell-extensions
-
-    # Browsers (Ungooled Chromium)
-    # Firefox is handled in its own module
-    ungoogled-chromium
 
     # --- YOUR CUSTOM PACKAGES ---
     # This grabs 'my-hello' from your ./pkgs/default.nix
