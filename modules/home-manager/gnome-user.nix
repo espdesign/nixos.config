@@ -20,8 +20,6 @@
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "com.mitchellh.ghostty.desktop"
-          "com.google.Chrome.desktop"
-
         ];
       };
 
