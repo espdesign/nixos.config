@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -17,7 +18,7 @@
       cheese # webcam tool
       gnome-music
       epiphany # web browser
-      geary # email reader
+      # geary # email reader
       gnome-characters
     ]);
 

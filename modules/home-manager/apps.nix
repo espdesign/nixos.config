@@ -15,6 +15,7 @@
     obsidian
     libreoffice
     typst
+    stirling-pdf
 
     # Communication
     vesktop

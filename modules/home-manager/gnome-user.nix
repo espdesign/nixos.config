@@ -2,9 +2,11 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # 1. Install the Wallpaper file
-  home.file.".local/share/backgrounds/wallpaper-molly.jpg".source = ../../assets/wallpapers/wallpaper-molly.jpg;
+  home.file.".local/share/backgrounds/wallpaper-molly.jpg".source =
+    ../../assets/wallpapers/wallpaper-molly.jpg;
 
   # 2. Configure GNOME Settings
   dconf = {
@@ -13,11 +15,13 @@
       "org/gnome/shell" = {
         disable-user-extensions = false;
         # Enable the app indicator extension (tray icons)
-        enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
+        enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" ];
         favorite-apps = [
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "com.mitchellh.ghostty.desktop"
+          "com.google.Chrome.desktop"
+
         ];
       };
 
