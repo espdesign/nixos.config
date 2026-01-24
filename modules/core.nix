@@ -49,6 +49,8 @@
     vim
     wget
     curl
+    google-chrome
+    thunderbird
   ];
 
   fonts.packages = with pkgs; [

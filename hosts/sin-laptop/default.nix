@@ -13,5 +13,4 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   system.stateVersion = "24.05";
-  services.flatpak.enable = true;
 }
