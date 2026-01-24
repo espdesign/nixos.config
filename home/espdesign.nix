@@ -5,7 +5,7 @@
     ../modules/home-manager/zsh.nix
     ../modules/home-manager/ghostty.nix
     ../modules/home-manager/neovim.nix
-    ../modules/home-manager/firefox.nix
+    ../modules/home-manager/mozilla.nix
     ../modules/home-manager/apps.nix
     ../modules/home-manager/gaming-user.nix
     ../modules/home-manager/gnome-user.nix

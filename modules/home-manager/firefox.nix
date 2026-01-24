@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  programs.thunderbird = {
+    enable = true;
+    profiles.espdesign = {
+      isDefault = true;
+    };
+  };
   programs.firefox = {
     enable = true;
 

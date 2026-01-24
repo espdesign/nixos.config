@@ -16,7 +16,6 @@
     libreoffice
     typst
     stirling-pdf
-    thunderbird
 
     # Communication
     vesktop
