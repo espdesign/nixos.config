@@ -36,12 +36,4 @@
       };
     };
   };
-  xdg.desktopEntries.thunderbird = {
-    name = "Thunderbird";
-    exec = "env -u LD_LIBRARY_PATH thunderbird %u";
-    terminal = false;
-    categories = [ "Network" "Email" ];
-    mimeType = [ "x-scheme-handler/mailto" ];
-    icon = "thunderbird";
-  };
 }
