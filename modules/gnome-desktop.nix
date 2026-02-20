@@ -9,17 +9,7 @@
 
   # Exclude default GNOME bloat (Optional)
   # If you don't want Tour, Music, Epiphany, etc.
-  environment.gnome.excludePackages =
-    (with pkgs; [
-      gnome-photos
-      gnome-tour
-    ])
-    ++ (with pkgs; [
-      cheese # webcam tool
-      gnome-music
-      epiphany # web browser
-      gnome-characters
-    ]);
+
 
   # Add GNOME specific system packages (like Tweaks)
   environment.systemPackages = with pkgs; [

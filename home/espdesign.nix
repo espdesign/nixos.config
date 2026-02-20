@@ -37,6 +37,7 @@
     gitCredentialHelper.enable = true;
   };
   home.packages = with pkgs; [
+    google-chrome
     # Core Utils
     coreutils
     fd
