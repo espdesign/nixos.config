@@ -15,5 +15,6 @@
   # Optional: Add GUI tools for audio control
   environment.systemPackages = with pkgs; [
     easyeffects
+    helvum
   ];
 }
