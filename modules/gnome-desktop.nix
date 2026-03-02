@@ -19,10 +19,6 @@
     mimeType = ["x-scheme-handler/mailto"];
     icon = "thunderbird"; # Ensures the icon still shows up
   };
-  # 2. remove the default Thunderbird launcher
-  # NOTE: This will remove the default Thunderbird launcher, but it will not remove the
-  # Thunderbird binary itself. You can still access it via the command line.
-  xdg.desktopEntries.thunderbird.enable = false;
 
   # Add GNOME specific system packages (like Tweaks)
   environment.systemPackages = with pkgs; [
