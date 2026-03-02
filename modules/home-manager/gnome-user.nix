@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   # 1. Install the Wallpaper file
   home.file.".local/share/backgrounds/wallpaper-molly.jpg".source =
     ../../assets/wallpapers/wallpaper-molly.jpg;
@@ -15,7 +14,7 @@
       "org/gnome/shell" = {
         disable-user-extensions = false;
         # Enable the app indicator extension (tray icons)
-        enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" ];
+        enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
         favorite-apps = [
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
@@ -36,4 +35,16 @@
       };
     };
   };
+  # 1. Create the custom "Clean" Thunderbird launcher
+  xdg.desktopEntries.thunderbird-clean = {
+    name = "Thunderbird (Clean Env)";
+    genericName = "Email Client";
+    exec = "env LD_LIBRARY_PATH= ${pkgs.thunderbird}/bin/thunderbird %u";
+    terminal = false;
+    categories = ["Application" "Network" "Email"];
+    mimeType = ["x-scheme-handler/mailto"];
+    icon = "thunderbird"; # Ensures the icon still shows up
+  };
+  # 2. Remove the default Thunderbird launcher
+  xdg.desktopEntries.thunderbird.enable = false;
 }
