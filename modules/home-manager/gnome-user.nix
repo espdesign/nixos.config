@@ -36,7 +36,7 @@
     };
   };
   # 1. Create the custom "Clean" Thunderbird launcher
-  xdg.desktopEntries.thunderbird-clean = {
+  xdg.desktopEntries.thunderbird = {
     name = "Thunderbird (Clean Env)";
     genericName = "Email Client";
     exec = "env LD_LIBRARY_PATH= ${pkgs.thunderbird}/bin/thunderbird %u";
@@ -45,6 +45,4 @@
     mimeType = ["x-scheme-handler/mailto"];
     icon = "thunderbird"; # Ensures the icon still shows up
   };
-  # 2. Remove the default Thunderbird launcher
-  xdg.desktopEntries.thunderbird.enable = false;
 }
