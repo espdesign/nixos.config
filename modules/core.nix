@@ -51,6 +51,7 @@
     curl
     google-chrome
     thunderbird
+    vscode-fhs
   ];
 
   fonts.packages = with pkgs; [
