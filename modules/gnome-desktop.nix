@@ -11,7 +11,6 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
     gnome-music
-    gnome-help
     epiphany
   ];
 
