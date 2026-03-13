@@ -5,7 +5,6 @@
 }:
 {
   home.packages = with pkgs; [
-    # Editors / Dev
 
     devenv
     # Remote Desktop
