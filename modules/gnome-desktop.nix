@@ -8,10 +8,11 @@
 
   # Exclude default GNOME bloat (Optional)
   # If you don't want Tour, Music, Epiphany, etc.
-  services.gnome.excludePackages = with pkgs; [
-    gnomeExtensions.tour
-    gnomeExtensions.music
-    gnomeExtensions.epiphany
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-music
+    gnome-help
+    epiphany
   ];
 
   # Add GNOME specific system packages (like Tweaks)

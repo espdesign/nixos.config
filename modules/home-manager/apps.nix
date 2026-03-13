@@ -5,7 +5,7 @@
 }:
 {
   home.packages = with pkgs; [
-
+    gemini-cli
     devenv
     # Remote Desktop
     rustdesk-flutter
