@@ -61,4 +61,8 @@
     noto-fonts
     jetbrains-mono
   ];
+  
+  services.tailscale = {
+    enable = true;
+  };
 }
