@@ -1,12 +1,24 @@
 {
   pkgs,
-  inputs,
   ...
-}: {
+}:
+{
+  imports = [
+    ./docker.nix
+    ./gnome-desktop.nix
+    ./pipewire-sound.nix
+    ./printing.nix
+  ];
   # Nix Settings
   nix.settings = {
-    experimental-features = ["nix-command" "flakes"]; # enable flakes
-    trusted-users = ["root" "espdesign"]; # allow root and espdesign to use nix
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ]; # enable flakes
+    trusted-users = [
+      "root"
+      "espdesign"
+    ]; # allow root and espdesign to use nix
   };
   # nix garbage collection, https://nixos.wiki/wiki/Storage_optimization#Automation
   nix.gc = {
@@ -35,7 +47,11 @@
   # User Configuration, Needed for Home Manager to attach
   users.users.espdesign = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
     initialHashedPassword = "$6$gMclef8wWibtLst0$6f0JIElUbX3DvW78zAOhLOesfigbHrMN0hzRgTDZaFjbG8uP6Nkzjm4an1AM0VriCyrLG8ECrHIJn.6OHbgdP0";
   };
@@ -60,8 +76,4 @@
     noto-fonts
     jetbrains-mono
   ];
-  
-  services.tailscale = {
-    enable = true;
-  };
 }

@@ -2,14 +2,12 @@
 {
   imports = [
     ./hardware.nix
-    ../../modules/core.nix
+    # Main Shared Configuration
+    ../../modules/default.nix # Main configuration file
+
+    # Unique to this host
     ../../modules/nvidia.nix # Enables nvidia drivers
-    # ../../modules/gnome-suspend-fix.nix # Fixes suspend/resume issues with gnome
-    ../../modules/gnome-desktop.nix # Enables gnome desktop
-    ../../modules/pipewire-sound.nix # Enables pipewire sound
-    ../../modules/printing.nix # Enables printing
-    ../../modules/gaming.nix
-    ../../modules/docker.nix
+    ../../modules/gaming.nix # Gaming related settings
   ];
   networking.hostName = "kitava-desktop";
 
