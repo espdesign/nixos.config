@@ -9,5 +9,6 @@
     ./neovim.nix
     ./syncthing.nix
     ./zsh.nix
+    ./code.nix
   ];
 }
