@@ -6,7 +6,7 @@
 
     # 1. Customizing Extensions
     # You can find these in the Nixpkgs registry
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       nonylene.dark-molokai-theme
       jnoortheen.nix-ide
       dbaeumer.vscode-eslint
@@ -16,7 +16,7 @@
     ];
 
     # 2. Customizing Editor Options (settings.json)
-    userSettings = {
+    profiles.default.userSettings = {
       # Typeface & Font Settings
       "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
       "editor.fontLigatures" = true;
