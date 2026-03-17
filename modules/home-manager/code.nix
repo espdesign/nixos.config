@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     # Use the standard vscode package or vscode-fhs for better compatibility with external binaries
@@ -9,7 +7,7 @@
     # 1. Customizing Extensions
     # You can find these in the Nixpkgs registry
     extensions = with pkgs.vscode-extensions; [
-      beardedbear.beardedtheme
+      nonylene.dark-molokai-theme
       jnoortheen.nix-ide
       dbaeumer.vscode-eslint
       esbenp.prettier-vscode
@@ -25,16 +23,17 @@
       "editor.fontSize" = 14;
 
       # Line Rulers (Good for maintaining code style/max line lengths)
-      "editor.rulers" = [ 80 120 ];
+      "editor.rulers" = [80 120];
 
       # General UI Customization
       "workbench.colorTheme" = "Dracula";
       "editor.formatOnSave" = true;
       "editor.minimap.enabled" = false;
-      
+
       # Nix-specific IDE settings
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil"; 
+      "nix.serverPath" = "nil";
     };
   };
 }
+
