@@ -1,16 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../modules/home-manager/syncthing.nix
-    ../modules/home-manager/zsh.nix
-    ../modules/home-manager/ghostty.nix
-    ../modules/home-manager/neovim.nix
-    ../modules/home-manager/mozilla.nix
-    ../modules/home-manager/apps.nix
-    ../modules/home-manager/gaming-user.nix
-    ../modules/home-manager/gnome-user.nix
-
-    ../modules/home-manager/dev-servers.nix
+    ../modules/home-manager/default.nix
   ];
   home.username = "espdesign";
   home.homeDirectory = "/home/espdesign";
