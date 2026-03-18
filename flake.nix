@@ -57,7 +57,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = {inherit inputs outputs;};
+              home-manager.extraSpecialArgs = {inherit inputs outputs hostname;};
               # Import the user configuration
               home-manager.users.espdesign = import ./home/espdesign.nix;
             }

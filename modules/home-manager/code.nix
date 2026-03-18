@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, hostname, ...}: {
   programs.vscode = {
     enable = true;
     # Use the standard vscode package or vscode-fhs for better compatibility with external binaries
@@ -20,7 +20,7 @@
       # Typeface & Font Settings
       "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 14;
+      "editor.fontSize" = if hostname == "sin-laptop" then 16 else 14;
 
       # Line Rulers (Good for maintaining code style/max line lengths)
       "editor.rulers" = [80 120];
