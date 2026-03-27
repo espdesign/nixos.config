@@ -8,6 +8,7 @@
     ./gnome-desktop.nix
     ./pipewire-sound.nix
     ./printing.nix
+    ./tailscale.nix
   ];
   # Nix Settings
   nix.settings = {
