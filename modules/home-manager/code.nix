@@ -8,7 +8,7 @@
     profiles.default.extensions =
       with pkgs.vscode-extensions;
       [
-        nonylene.dark-molokai-theme
+
         jnoortheen.nix-ide
         dbaeumer.vscode-eslint
         esbenp.prettier-vscode
@@ -24,20 +24,17 @@
         # 5. Add to extensionsFromVscodeMarketplace below with the sha256 hash
         #
         # Example:
-        # ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         #   {
         #     name = "extension-name";
         #     publisher = "Publisher";
         #     version = "1.0.0";
         #     sha256 = "hash-from-step-4";
         #   }
-        # ]
-        #
         {
-          name = "beardedtheme";
-          publisher = "BeardedBear";
-          version = "10.1.0";
-          sha256 = "7MkvLEadzgB7af01lYibEOqHn9bvzlpgMTEiiQBlEzA=";
+          name = "theme-monokai-pro-vscode";
+          publisher = "monokai";
+          version = "2.0.12";
+          sha256 = "e/IjWP+GgA8dTJWV9nloFVuv68Bh5DiW1QcVXpUdS3Q=";
         }
       ];
 
@@ -45,7 +42,7 @@
     profiles.default.userSettings = {
       # Typeface & Font Settings
       "editor.fontFamily" = "'JetBrains Mono', 'monospace', monospace";
-      "editor.fontLigatures" = true;
+      "editor.fontLigatures" = false;
       "editor.fontSize" = if hostname == "sin-laptop" then 16 else 14;
 
       # Line Rulers (Good for maintaining code style/max line lengths)
@@ -55,7 +52,7 @@
       ];
 
       # General UI Customization
-      "workbench.colorTheme" = "Bearded Theme";
+      "workbench.colorTheme" = "Monokai Pro";
       "editor.formatOnSave" = true;
       "editor.minimap.enabled" = false;
 
