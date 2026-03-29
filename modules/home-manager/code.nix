@@ -53,6 +53,8 @@
 
       # General UI Customization
       "workbench.colorTheme" = "Monokai Pro";
+      "workbench.iconTheme" = "Monokai Pro Icons";
+
       "editor.formatOnSave" = true;
       "editor.minimap.enabled" = false;
 
