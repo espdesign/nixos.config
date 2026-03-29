@@ -5,6 +5,7 @@
 }:
 {
   home.packages = with pkgs; [
+    opencode
     gemini-cli
     devenv
     # Remote Desktop
