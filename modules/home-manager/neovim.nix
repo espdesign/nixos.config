@@ -9,12 +9,6 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-
-    # Neovim usually needs a Node provider for Copilot/LSPs
-    withNodeJs = true;
-
-    # Python provider (if you have plugins needing pynvim)
-    withPython3 = true;
   };
 
   # --- The "Deps" Section ---
