@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -53,7 +54,7 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
-    options = ["--cmd cd"]; # Replace 'cd' with 'z' automatically
+    options = [ "--cmd cd" ]; # Replace 'cd' with 'z' automatically
   };
 
   # 3. Eza (The "Better ls" part)
@@ -83,5 +84,6 @@
     enable = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+    config.global.log_format = "";
   };
 }
