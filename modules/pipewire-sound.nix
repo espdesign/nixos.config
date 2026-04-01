@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -15,6 +16,5 @@
   # Optional: Add GUI tools for audio control
   environment.systemPackages = with pkgs; [
     easyeffects
-    helvum
   ];
 }

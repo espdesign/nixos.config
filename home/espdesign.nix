@@ -8,6 +8,7 @@
 
   programs.git = {
     enable = true;
+    signing.format = null; # To adopt the new default behavior, set:
     settings = {
       user = {
         name = "espdesign";
