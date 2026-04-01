@@ -3,17 +3,17 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1767366852,
-        "narHash": "sha256-p+xCTaOWa0M+PVQXoSuzEqwyouqs2xHml7oi5uLVrZY=",
+        "lastModified": 1775013018,
+        "narHash": "sha256-GCKGHi9NfNZdJsWAa1V6Y1QIfFxK+w2AyqLRzyk5dH8=",
         "ref": "refs/heads/main",
-        "rev": "88d90e72e5779a2c92ebf04b3ccddf9733edb180",
-        "revCount": 24,
+        "rev": "0921881155b08371869c0a95a5a1262b4b2ea346",
+        "revCount": 25,
         "type": "git",
-        "url": "https://github.com/espdesign/dotfiles.config.git"
+        "url": "https://github.com/espdesign/dotfiles.git"
       },
       "original": {
         "type": "git",
-        "url": "https://github.com/espdesign/dotfiles.config.git"
+        "url": "https://github.com/espdesign/dotfiles.git"
       }
     },
     "home-manager": {

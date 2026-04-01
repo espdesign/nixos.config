@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -34,5 +35,7 @@
     nodejs_24 # Specific node version (if not using the built-in one)
     markdownlint-cli
   ];
+  # home.file.".local/share/backgrounds/wallpaper-molly.jpg".source =
+  # ../../assets/wallpapers/wallpaper-molly.jpg;
   xdg.configFile."nvim".source = "${inputs.dotfiles}/nvim";
 }
