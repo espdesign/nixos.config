@@ -31,5 +31,8 @@
   ];
   # home.file.".local/share/backgrounds/wallpaper-molly.jpg".source =
   # ../../assets/wallpapers/wallpaper-molly.jpg;
-  xdg.configFile."nvim".source = "${inputs.dotfiles}/nvim";
+  xdg.configFile."nvim" = {
+    source = "${inputs.dotfiles}/nvim";
+    recursive = true;
+  };
 }
