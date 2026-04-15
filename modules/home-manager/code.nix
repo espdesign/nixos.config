@@ -12,7 +12,7 @@
         jnoortheen.nix-ide
         dbaeumer.vscode-eslint
         esbenp.prettier-vscode
-
+        astro-build.astro-vscode
         bradlc.vscode-tailwindcss
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
