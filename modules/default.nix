@@ -58,7 +58,7 @@
   };
   #enable zsh system-wide
   programs.zsh.enable = true;
-
+  programs.nix-ld.enable = true;
   # NOTE IT MAY BE BETTER TO ADD IN ./home-manager/app.nix if you dont want system level
   # Universal packages, or tools you always want accessible
   environment.systemPackages = with pkgs; [
@@ -77,4 +77,5 @@
     noto-fonts
     jetbrains-mono
   ];
+
 }
