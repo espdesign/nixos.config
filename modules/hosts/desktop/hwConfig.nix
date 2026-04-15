@@ -1,4 +1,7 @@
 {
+  #It should have the same name as the module inside the $host.nix.
+  #This causes the flake-file to automatically merge their contents,
+  #so we don’t have to import these two modules separately.
   flake.nixosModules.desktop =
     {
       config,
