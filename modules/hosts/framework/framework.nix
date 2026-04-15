@@ -1,5 +1,4 @@
 ### ./modules/host/$host/$host.nix
-
 {
   inputs,
   self,
@@ -12,18 +11,15 @@
     nixosConfigurations.framework = inputs.nixpkgs.lib.nixosSystem {
       modules = with self.nixosModules; [
         framework
-        #hyprland
-        otherExampleMoudule
-        fish
+        coreDefaults
       ];
     };
 
     # module for additional configuration
-    nixosModules.framework =
+    flake.nixosModules.framework =
       { pkgs, ... }:
       {
-        environment.systemPackages = with pkgs; [
-
+        imports = with self.nixosModules; [
         ];
       };
   };

@@ -8,18 +8,16 @@
 }:
 {
   flake = {
-    # Declare $host machine
-    nixosConfigurations.framework = inputs.nixpkgs.lib.nixosSystem {
+    # Declare desktop machine
+    nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
       modules = with self.nixosModules; [
-        framework
-        #hyprland
-        otherExampleMoudule
-        fish
+        desktop
+        coreDefaults
       ];
     };
 
     # module for additional configuration
-    nixosModules.framework =
+    nixosModules.desktop =
       { pkgs, ... }:
       {
         environment.systemPackages = with pkgs; [
