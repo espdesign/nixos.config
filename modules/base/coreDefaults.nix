@@ -21,6 +21,12 @@
       };
       # Allow unfree packages (Chrome, VSCode, etc)
       nixpkgs.config.allowUnfree = true;
+
+      # Bootloader
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
+
+      system.stateVersion = "24.05";
       # Locale & Time
       time.timeZone = "America/New_York";
       i18n.defaultLocale = "en_US.UTF-8";
