@@ -52,7 +52,7 @@
           "docker"
         ];
         shell = pkgs.zsh;
-        initialHashedPassword = "$6$gMclef8wWibtLst0$6f0JIElUbX3DvW78zAOhLOesfigbHrMN0hzRgTDZaFjbG8uP6Nkzjm4an1AM0VriCyrLG8ECrHIJn.6OHbgdP0";
+        initialHashedPassword = "$6$E0Z0XQnhLaHkpACy$kR/9UJImBjJyHqsagv.Gec4RwsKyRy3WGVsSzk.u2nniG1666Yg1HSvWE58PYQdh2nwX1Bn0a5/vkJ.WvVD2/1";
       };
       #enable zsh system-wide
       programs.zsh.enable = true;
